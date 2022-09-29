@@ -1,0 +1,32 @@
+--Create a grocery store database
+
+create table Food_Store (id integer primary key, name text, quantity integer, price_in_dollars integer, description text);
+insert into Food_Store values (1, "chocolate", 7, 9, "dark chocolate");
+insert into Food_Store values (2, "jolly ranchers", 12, 3, "blue raspberry");
+insert into Food_Store values (3, "doritos", 17, 1, "cool ranch");
+insert into Food_Store values (4, "cake", 5, 7, "chocolate");
+insert into Food_Store values (5, "cinnamon", 19, 2, "spice");
+insert into Food_Store values (6, "milk", 9, 8, "whole milk");
+insert into Food_Store values (7, "orange juice", 6, 8, "no pulp");
+insert into Food_Store values (8, "bread", 6, 4, "whole wheat");
+insert into Food_Store values (9, "rolls", 4, 4, "pack of 12");
+insert into Food_Store values (10, "flour", 5, 2, "single pound");
+insert into Food_Store values (11, "american cheese", 4, 9, "bag of 24");
+insert into Food_Store values (12, "swiss cheese", 10, 9, "bag of 12");
+insert into Food_Store values (13, "turkey", 4, 3, "16 ounces");
+insert into Food_Store values (14, "ham", 9, 3, "32 ounces");
+insert into Food_Store values (15, "roast beef", 5, 3, "24 ounces");
+
+--display the database ordered by price
+SELECT * FROM Food_Store;
+order by price_in_dollars desc;
+
+
+--display the list in order by aisle
+SELECT * FROM Food_Store;
+order by price_in_dollars desc;
+
+
+--what are the products most in stock?
+SELECT * FROM Food_Store
+order by quantity desc limit 5;
