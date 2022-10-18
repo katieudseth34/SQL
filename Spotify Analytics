@@ -73,3 +73,15 @@ CASE
     END AS how_danceable
 FROM BIT_DB.Spotifydata
 ORDER BY danceability DESC
+
+--Who has the most energetic song?
+SELECT * 
+FROM BIT_DB.Spotifydata
+ORDER BY energy DESC
+LIMIT 1;
+
+--Who has the longest song?
+SELECT artist_name, track_name, duration_ms
+FROM BIT_DB.Spotifydata
+ORDER BY duration_ms DESC
+LIMIT 1;
