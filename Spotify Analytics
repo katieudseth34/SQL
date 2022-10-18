@@ -62,3 +62,14 @@ SELECT artist_name, count (*) AS 'number_of_songs'
 FROM BIT_DB.Spotifydata
 GROUP BY artist_name
 ORDER BY count (*) desc;
+
+--Which songs have a high danceability?
+SELECT danceability, track_name, 
+CASE
+    WHEN danceability >= .75 THEN 'High'
+    WHEN danceability >= .65 THEN 'Medium'
+    WHEN danceability >= .50 THEN 'Low'
+    ELSE 'No Fun'
+    END AS how_danceable
+FROM BIT_DB.Spotifydata
+ORDER BY danceability DESC
