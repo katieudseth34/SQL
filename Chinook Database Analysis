@@ -127,3 +127,16 @@ ON t.AlbumId = a.AlbumId
 JOIN chinook.artists art
 ON a.ArtistId = art.ArtistId
 WHERE ArtistName = 'Queen';
+
+--Show all songs on the 'Grunge' playlist.
+SELECT t.name AS Track_Name, art.Name AS Artist_Name, p.Name AS Playlist_Name
+FROM chinook.tracks t
+JOIN chinook.playlist_track pt
+ON t.trackID = pt.trackID
+JOIN chinook.playlists p
+ON pt.playlistID = p.playlistID
+JOIN chinook.albums a
+ON a.albumID = t.albumID
+JOIN chinook.artists art
+ON a.artistID = art.artistID
+WHERE Playlist_Name = 'Grunge';
