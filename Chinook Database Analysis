@@ -116,3 +116,14 @@ LIMIT 1
 --What is the average total per invoice?
 SELECT ROUND (AVG (total), 2) AS Average_Total
 FROM chinook.invoices;
+
+--List all the songs by Queen.
+SELECT ii.TrackID, t.Name AS TrackName, art.Name AS ArtistName
+FROM chinook.invoice_items ii
+JOIN chinook.tracks t
+ON ii.trackID = t.trackID
+JOIN chinook.albums a
+ON t.AlbumId = a.AlbumId
+JOIN chinook.artists art
+ON a.ArtistId = art.ArtistId
+WHERE ArtistName = 'Queen';
