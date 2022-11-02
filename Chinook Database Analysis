@@ -39,14 +39,6 @@ ON e.employeeID = c.SupportRepID
 JOIN chinook.invoices i
 ON c.customerID = i.customerID;
 
-SELECT emp.LastName, emp.Firstname, inv.InvoiceId
-FROM chinook.Employees emp 
-JOIN chinook.Customers cust 
-ON cust.SupportRepId = emp.EmployeeId
-JOIN chinook.Invoices Inv 
-ON Inv.CustomerId = cust.CustomerId;
-
-
 --Show the Invoice Total, Customer name, Country, and Sales Agent name for all invoices and customers.
 SELECT i.Total, c.FirstName, c.LastName, c.Country, e.FirstName AS empFirstName, e.LastName AS empLastName
 FROM chinook.invoices i
@@ -116,7 +108,6 @@ GROUP BY empFirstName
 ORDER BY Total_in_2009 DESC
 LIMIT 1
 ;
-
 
 --What is the average total per invoice?
 SELECT ROUND (AVG (total), 2) AS Average_Total
