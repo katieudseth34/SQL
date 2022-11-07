@@ -29,7 +29,7 @@ WHERE Title = "Sales Support Agent";
 
 --Find a unique/distinct list of billing countries from the Invoice table.
 SELECT DISTINCT BillingCountry 
-FROM chinook.Invoices ;
+FROM chinook.Invoices;
 
 --Provide a query that shows the invoices associated with each sales agent. The resulting table should include the Sales Agent's full name.
 SELECT e.FirstName AS empFirstName, e.LastName AS empLastName, i.InvoiceID
@@ -92,8 +92,7 @@ LEFT JOIN chinook.customers c
 ON i.CustomerID = c.CustomerID
 LEFT JOIN chinook.employees e
 ON e.EmployeeID = c.SupportRepID
-GROUP BY empFirstName
-;
+GROUP BY empFirstName;
 
 --Which sales agent made the most dollars in sales in 2009?
 SELECT DISTINCT e.FirstName AS empFirstName, e.LastName AS empLastName, 
@@ -106,8 +105,7 @@ ON e.EmployeeID = c.SupportRepID
 WHERE i.InvoiceDate like '2009%'
 GROUP BY empFirstName
 ORDER BY Total_in_2009 DESC
-LIMIT 1
-;
+LIMIT 1;
 
 --What is the average total per invoice?
 SELECT ROUND (AVG (total), 2) AS Average_Total
